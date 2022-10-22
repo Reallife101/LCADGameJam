@@ -16,7 +16,7 @@ public class pauseMenu : MonoBehaviour
         }
         else
         {
-            pause.SetActive(true);
+            showPause();
             Time.timeScale = 0f;
         }
     }
