@@ -35,8 +35,8 @@ public class playerMovement : MonoBehaviour
 
     public void enterPowerMode()
     {
-        barTransform = 2;
-        currentLaunchPower = launchPower * 2;
+        barTransform = 1.5f;
+        currentLaunchPower = launchPower * 1.5f;
         exitStickyMode();
     }
     public void exitPowerMode()
