@@ -1,0 +1,14 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class tpPlayer : MonoBehaviour
+{
+    public GameObject player;
+    public Transform checkpoint;
+    
+    public void tpPlay()
+    {
+        player.transform.position = checkpoint.position;
+    }
+}

@@ -988,6 +988,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   launchPower: 10
   bar: {fileID: 419468294}
+  sr: {fileID: 1315098406}
 --- !u!1 &1315098404
 GameObject:
   m_ObjectHideFlags: 0
