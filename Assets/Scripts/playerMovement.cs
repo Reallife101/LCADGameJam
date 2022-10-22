@@ -7,6 +7,8 @@ public class playerMovement : MonoBehaviour
     public float launchPower = 10f;
     public Transform bar;
     public SpriteRenderer sr;
+    public SpriteRenderer player;
+    public Animator ai;
 
     private float oldX;
     private float oldY;
@@ -102,7 +104,8 @@ public class playerMovement : MonoBehaviour
             oldX = mousePos.x;
             oldY = mousePos.y;
             bar.gameObject.SetActive(true);
-            
+            ai.SetBool("isCrouching", true);
+
         }
 
         // Set Current Jump Vector based on let go position
@@ -117,7 +120,8 @@ public class playerMovement : MonoBehaviour
             {
                 jump(jumpVector);
             }
-            
+
+            ai.SetBool("isCrouching", false);
         }
     }
 
@@ -141,6 +145,7 @@ public class playerMovement : MonoBehaviour
             return;
         }
 
+        ai.SetBool("isJumping", true);
         rb.AddForce(v * currentLaunchPower, ForceMode2D.Impulse);
         if (v.magnitude > 0.2f)
         {
@@ -158,7 +163,7 @@ public class playerMovement : MonoBehaviour
     void setJumBar(Vector2 v)
     {
         float rotation = Vector2.Angle(new Vector2(1, 0), v);
-       
+
         if (v.y < 0)
         {
             rotation = 360f - rotation;
@@ -171,12 +176,27 @@ public class playerMovement : MonoBehaviour
         );
 
         bar.localScale = new Vector3(Mathf.Min(v.magnitude, barTransform),  bar.localScale.y,  bar.localScale.z);
+
+        // Set Direction of player
+        if (bar.gameObject.activeInHierarchy)
+        {
+            if (v.x < 0)
+            {
+                player.flipX = true;
+            }
+            else
+            {
+                player.flipX = false;
+            }
+        }
+        
     }
 
     // Reset Jump
     void OnCollisionEnter2D(Collision2D col)
     {
         canJump = true;
+        ai.SetBool("isJumping", false);
 
         //If sticky stop and turn off gravity
         if (stickyMode)

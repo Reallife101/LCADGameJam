@@ -10,5 +10,12 @@ public class tpPlayer : MonoBehaviour
     public void tpPlay()
     {
         player.transform.position = checkpoint.position;
+        playerMovement pm = player.GetComponent<playerMovement>();
+
+        if (pm)
+        {
+            pm.exitPowerMode();
+            pm.exitStickyMode();
+        }
     }
 }
