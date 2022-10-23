@@ -25,15 +25,20 @@ public class playerMovement : MonoBehaviour
     private float currentLaunchPower;
     private Vector3 oldPosition;
     private float timeElapsed;
+    private AudioSource au;
+    private audioManager am;
 
     public void enterStickyMode()
     {
         exitPowerMode();
         stickyMode = true;
+        am.playPowerUp();
+        player.color = new Color(255, 255, 0);
     }
     public void exitStickyMode()
     {
         stickyMode = false;
+        player.color = new Color(255, 255, 255);
     }
 
     public void enterPowerMode()
@@ -41,15 +46,26 @@ public class playerMovement : MonoBehaviour
         barTransform = 1.5f;
         currentLaunchPower = launchPower * 1.5f;
         exitStickyMode();
+        player.color = new Color(255, 0, 0);
     }
     public void exitPowerMode()
     {
         barTransform = 1;
         currentLaunchPower = launchPower;
+        player.color = new Color(255, 255, 255);
     }
 
     public void setCanJump(bool b)
     {
+        if (b)
+        {
+            player.color = new Color(0, 255, 228);
+        }
+        else
+        {
+            player.color = new Color(255, 255, 255);
+        }
+
         canJump = b;
     }
     
@@ -65,6 +81,8 @@ public class playerMovement : MonoBehaviour
         currentLaunchPower = launchPower;
         oldPosition = transform.position;
         timeElapsed = 0;
+        au = GetComponent<AudioSource>();
+        am = GameObject.FindGameObjectWithTag("AudioManager").GetComponent<audioManager>();
     }
 
     // Update is called once per frame
@@ -151,6 +169,7 @@ public class playerMovement : MonoBehaviour
         }
 
         ai.SetBool("isJumping", true);
+        am.playPlayerJump();
         rb.AddForce(v * currentLaunchPower, ForceMode2D.Impulse);
         if (v.magnitude > 0.2f)
         {
@@ -212,6 +231,12 @@ public class playerMovement : MonoBehaviour
             {
                 ai.SetBool("Squish", true);
             }
+
+            am.playPlayerStick();
+        }
+        else
+        {
+            am.playLandingSound(au);
         }
 
     }
