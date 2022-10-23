@@ -3647,18 +3647,18 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Ryan Ngoon - Programmer, UI/UX
+  m_text: 'Ryan Ngoon - Programmer, Level Design
 
     Addison May - 2D Artist, Animator
 
     Darius
     Jover - 3d Artist, Modeler
 
-    Jaine
+    Janie Chen - Composer, Sound Design
 
 
-    Made for the LCAD Fall 2022 Game
-    Jam'
+    Made
+    for the LCAD Fall 2022 Game Jam'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2f4c424aa111fd44cb9d7972f789b7e9, type: 2}
   m_sharedMaterial: {fileID: -428153772308436665, guid: 2f4c424aa111fd44cb9d7972f789b7e9, type: 2}
