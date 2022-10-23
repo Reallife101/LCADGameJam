@@ -6,6 +6,7 @@ public class tpPlayer : MonoBehaviour
 {
     public GameObject player;
     public Transform checkpoint;
+    public pauseMenu pause;
     
     public void tpPlay()
     {
@@ -16,6 +17,8 @@ public class tpPlayer : MonoBehaviour
         {
             pm.exitPowerMode();
             pm.exitStickyMode();
+            pause.togglePause();
+            pause.togglePause();
         }
     }
 }

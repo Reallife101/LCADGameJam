@@ -1,11 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class pauseMenu : MonoBehaviour
 {
     public GameObject pause;
     public GameObject levelSelect;
+    public stopwa watch;
+    public TMP_Text tm;
+
+    private void Start()
+    {
+        watch.Begin();
+    }
 
     public void togglePause()
     {
@@ -18,6 +26,7 @@ public class pauseMenu : MonoBehaviour
         {
             showPause();
             Time.timeScale = 0f;
+            tm.text = "Time: " + (watch.GetMinutes()).ToString("D2") + ":" + (watch.GetSeconds()).ToString("D2");
         }
     }
 

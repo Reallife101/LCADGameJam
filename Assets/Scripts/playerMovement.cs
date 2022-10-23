@@ -108,6 +108,7 @@ public class playerMovement : MonoBehaviour
         {
             canJump = true;
             Debug.Log("Fix!");
+            ai.SetBool("isJumping", false);
         }
 
         // Handle Color Change
