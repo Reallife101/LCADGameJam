@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/mountain.unity
     guid: a22335eb7f1be3a47b5920d7f10062b9
+  - enabled: 1
+    path: Assets/Scenes/endscene.unity
+    guid: d70688bb0edc3094980e980c855ca0cf
   m_configObjects: {}
