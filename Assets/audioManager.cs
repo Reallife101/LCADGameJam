@@ -57,7 +57,7 @@ public class audioManager : MonoBehaviour
         //au.pitch = Random.Range(0f, 3f);
         if (playerGrunts.Count>0)
         {
-            au.PlayOneShot(landingSounds[Random.Range(0, playerGrunts.Count)], .6f);
+            au.PlayOneShot(playerGrunts[Random.Range(0, playerGrunts.Count)], .1f);
         }
         //au.pitch = pitch;
     }

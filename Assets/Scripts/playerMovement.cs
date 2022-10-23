@@ -170,6 +170,7 @@ public class playerMovement : MonoBehaviour
 
         ai.SetBool("isJumping", true);
         am.playPlayerJump();
+        am.playPlayerGrunt(au);
         rb.AddForce(v * currentLaunchPower, ForceMode2D.Impulse);
         if (v.magnitude > 0.2f)
         {

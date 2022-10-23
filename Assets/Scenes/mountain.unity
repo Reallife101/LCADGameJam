@@ -10405,7 +10405,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   landingSounds: []
-  playerGrunts: []
+  playerGrunts:
+  - {fileID: 8300000, guid: a35c5e05d8b3bcc49ae13371ee487fce, type: 3}
+  - {fileID: 8300000, guid: 40bdd7127dbf01241ade83fe599579f1, type: 3}
+  - {fileID: 8300000, guid: 1a34a5e45f2b25f44a28d1c4ad07889c, type: 3}
+  - {fileID: 8300000, guid: 523e0006029508947b1bc9d12c5b7c8f, type: 3}
+  - {fileID: 8300000, guid: 27775665f42e8074ea1c1df77b794741, type: 3}
   JumpSFX: {fileID: 0}
   stickySFX: {fileID: 0}
   powerUp: {fileID: 0}
