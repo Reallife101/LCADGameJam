@@ -9,6 +9,9 @@ public class playerMovement : MonoBehaviour
     public SpriteRenderer sr;
     public SpriteRenderer player;
     public Animator ai;
+    public Transform groundCheck;
+
+    [SerializeField] LayerMask lm;
 
     private float oldX;
     private float oldY;
@@ -105,6 +108,7 @@ public class playerMovement : MonoBehaviour
             oldY = mousePos.y;
             bar.gameObject.SetActive(true);
             ai.SetBool("isCrouching", true);
+            ai.SetBool("Squish", false);
 
         }
 
@@ -123,6 +127,7 @@ public class playerMovement : MonoBehaviour
 
             ai.SetBool("isCrouching", false);
         }
+
     }
 
     // Applies force to player
@@ -203,7 +208,12 @@ public class playerMovement : MonoBehaviour
         {
             rb.velocity = Vector2.zero;
             rb.gravityScale = 0;
+            if (!(Physics2D.OverlapCircle(new Vector2(groundCheck.position.x, groundCheck.position.y), .25f, ~lm)))
+            {
+                ai.SetBool("Squish", true);
+            }
         }
+
     }
 
 
