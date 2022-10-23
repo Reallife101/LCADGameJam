@@ -10404,16 +10404,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4cb7c248dfffc384591a548bcc7566e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  landingSounds: []
+  landingSounds:
+  - {fileID: 8300000, guid: 769791cd49a41bd4ea4b5b3fc5264894, type: 3}
+  - {fileID: 8300000, guid: cc92d1b8914f98d409a561a592e868fd, type: 3}
+  - {fileID: 8300000, guid: 38d863d3048e2204e930cf5791841bde, type: 3}
+  - {fileID: 8300000, guid: 3327558687d20e44eb32bd411835b2aa, type: 3}
+  - {fileID: 8300000, guid: 29aadaa1fdb2d384bb358c27a8a07cc5, type: 3}
   playerGrunts:
   - {fileID: 8300000, guid: a35c5e05d8b3bcc49ae13371ee487fce, type: 3}
   - {fileID: 8300000, guid: 40bdd7127dbf01241ade83fe599579f1, type: 3}
   - {fileID: 8300000, guid: 1a34a5e45f2b25f44a28d1c4ad07889c, type: 3}
   - {fileID: 8300000, guid: 523e0006029508947b1bc9d12c5b7c8f, type: 3}
   - {fileID: 8300000, guid: 27775665f42e8074ea1c1df77b794741, type: 3}
-  JumpSFX: {fileID: 0}
-  stickySFX: {fileID: 0}
-  powerUp: {fileID: 0}
+  JumpSFX: {fileID: 8300000, guid: bd3c31039a8f9f840beaa7eee1702951, type: 3}
+  stickySFX:
+  - {fileID: 8300000, guid: 1b4d842e65dcd614b9418612d6d3134d, type: 3}
+  - {fileID: 8300000, guid: ebf90f14251867143885a45adcb04ba0, type: 3}
+  - {fileID: 8300000, guid: 45d76f4e177113c42a5916961bc149b9, type: 3}
+  - {fileID: 8300000, guid: b3012175a626fa0419856b6a60737f9e, type: 3}
+  - {fileID: 8300000, guid: 6c692e298d758a64aa6cfe4ed797da17, type: 3}
+  powerUp: {fileID: 8300000, guid: fd03eafd540bed3469a385810e380648, type: 3}
 --- !u!1 &676099538
 GameObject:
   m_ObjectHideFlags: 0

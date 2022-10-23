@@ -7,7 +7,7 @@ public class audioManager : MonoBehaviour
     [SerializeField] List<AudioClip> landingSounds;
     [SerializeField] List<AudioClip> playerGrunts;
     [SerializeField] AudioClip JumpSFX;
-    [SerializeField] AudioClip stickySFX;
+    [SerializeField] List<AudioClip> stickySFX;
 
     [SerializeField] AudioClip powerUp;
 
@@ -37,9 +37,9 @@ public class audioManager : MonoBehaviour
 
     public void playPlayerStick()
     {
-        if (stickySFX)
+        if (stickySFX.Count > 0)
         {
-            au.PlayOneShot(stickySFX, .6f);
+            au.PlayOneShot(stickySFX[Random.Range(0, landingSounds.Count)], .4f);
         }
     }
 
@@ -57,7 +57,7 @@ public class audioManager : MonoBehaviour
         //au.pitch = Random.Range(0f, 3f);
         if (playerGrunts.Count>0)
         {
-            au.PlayOneShot(playerGrunts[Random.Range(0, playerGrunts.Count)], .1f);
+            au.PlayOneShot(playerGrunts[Random.Range(0, playerGrunts.Count)], .05f);
         }
         //au.pitch = pitch;
     }
