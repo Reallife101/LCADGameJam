@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class powerJump : MonoBehaviour
 {
+    private audioManager am;
+    private void Start()
+    {
+        am = GameObject.FindGameObjectWithTag("AudioManager").GetComponent<audioManager>();
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         playerMovement pm = collision.GetComponent<playerMovement>();
@@ -11,6 +16,7 @@ public class powerJump : MonoBehaviour
         if (pm)
         {
             pm.enterPowerMode();
+            am.playPowerUp();
         }
     }
 
@@ -21,6 +27,7 @@ public class powerJump : MonoBehaviour
         if (pm)
         {
             pm.exitPowerMode();
+            am.playPowerDown();
         }
     }
 }

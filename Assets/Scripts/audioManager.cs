@@ -11,6 +11,7 @@ public class audioManager : MonoBehaviour
     [SerializeField] List<AudioClip> stickySFX;
 
     [SerializeField] AudioClip powerUp;
+    [SerializeField] AudioClip powerDown;
 
     private AudioSource au;
     
@@ -42,9 +43,17 @@ public class audioManager : MonoBehaviour
 
     public void playPowerUp()
     {
-        if (JumpSFX)
+        if (powerUp)
         {
             au.PlayOneShot(powerUp, 1f);
+        }
+    }
+
+    public void playPowerDown()
+    {
+        if (powerDown)
+        {
+            au.PlayOneShot(powerDown, 1f);
         }
     }
 

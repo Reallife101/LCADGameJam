@@ -11,6 +11,8 @@ public class playerMovement : MonoBehaviour
     public Animator ai;
     public Transform groundCheck;
 
+    [SerializeField] GameObject smoke;
+    [SerializeField] List<GameObject> crashes;
     [SerializeField] LayerMask lm;
 
     private float oldX;
@@ -32,7 +34,7 @@ public class playerMovement : MonoBehaviour
     {
         exitPowerMode();
         stickyMode = true;
-        am.playPowerUp();
+        //am.playPowerUp();
         player.color = new Color(255, 255, 0);
     }
     public void exitStickyMode()
@@ -172,6 +174,10 @@ public class playerMovement : MonoBehaviour
         am.playPlayerJump();
         am.playPlayerGrunt(au);
         rb.AddForce(v * currentLaunchPower, ForceMode2D.Impulse);
+        GameObject go = Instantiate(smoke, new Vector3(transform.position.x, transform.position.y, -0.1f), Random.rotation);
+        float mag = Mathf.Max(v.magnitude, .25f);
+        go.transform.localScale = new Vector3(mag, mag, mag);
+        
         if (v.magnitude > 0.2f)
         {
             timeElapsed = 0f;
@@ -238,6 +244,9 @@ public class playerMovement : MonoBehaviour
         else
         {
             am.playLandingSound(au);
+            GameObject go = Instantiate(crashes[Random.Range(0, crashes.Count)], new Vector3(transform.position.x, transform.position.y -.5f, -0.1f), Random.rotation);
+            float mag = Mathf.Min(rb.velocity.magnitude/5, .5f);
+            go.transform.localScale = new Vector3(mag, mag, mag);
         }
 
     }
