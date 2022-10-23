@@ -10417,6 +10417,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 523e0006029508947b1bc9d12c5b7c8f, type: 3}
   - {fileID: 8300000, guid: 27775665f42e8074ea1c1df77b794741, type: 3}
   JumpSFX: {fileID: 8300000, guid: bd3c31039a8f9f840beaa7eee1702951, type: 3}
+  JumpSFXsmall: {fileID: 8300000, guid: bb8415aaf174fbd48a2cbb528dab75e8, type: 3}
   stickySFX:
   - {fileID: 8300000, guid: 1b4d842e65dcd614b9418612d6d3134d, type: 3}
   - {fileID: 8300000, guid: ebf90f14251867143885a45adcb04ba0, type: 3}

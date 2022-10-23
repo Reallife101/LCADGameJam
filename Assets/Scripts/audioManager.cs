@@ -7,6 +7,7 @@ public class audioManager : MonoBehaviour
     [SerializeField] List<AudioClip> landingSounds;
     [SerializeField] List<AudioClip> playerGrunts;
     [SerializeField] AudioClip JumpSFX;
+    [SerializeField] AudioClip JumpSFXsmall;
     [SerializeField] List<AudioClip> stickySFX;
 
     [SerializeField] AudioClip powerUp;
@@ -24,6 +25,18 @@ public class audioManager : MonoBehaviour
         if (JumpSFX)
         {
             au.PlayOneShot(JumpSFX, 1f);
+        }
+    }
+
+    public void playPlayerJump(float f)
+    {
+        if (f >.3)
+        {
+            au.PlayOneShot(JumpSFX, 1f);
+        }
+        else
+        {
+            au.PlayOneShot(JumpSFXsmall, 1f);
         }
     }
 
